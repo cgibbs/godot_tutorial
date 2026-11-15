@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ScenePainterSceneData" format=4 uid="uid://peaf28cu2kvb"]
+
+[ext_resource type="Script" uid="uid://bmbtel7ohfs3e" path="res://addons/scene_painter/scene_painter_label_settings.gd" id="1_x35td"]
+[ext_resource type="Script" uid="uid://50r12rv0cn6o" path="res://addons/scene_painter/scene_painter_scene_data.gd" id="2_7ypp3"]
+
+[sub_resource type="Resource" id="Resource_x35td"]
+script = ExtResource("1_x35td")
+text = "checkpoint here"
+max_line_width = 600.0
+custom_font_size = 5
+position = Vector2(7.9908447, 41.696426)
+
+[sub_resource type="Resource" id="Resource_7ypp3"]
+script = ExtResource("1_x35td")
+text = "return to checkpoint pickup here"
+max_line_width = 600.0
+position = Vector2(-92.8392, 389.70065)
+
+[resource]
+script = ExtResource("2_7ypp3")
+images = Dictionary[Vector2i, PackedByteArray]({
+Vector2i(0, 0): PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAAfpJREFUeJzt3NutgkAUBVA0twU7oP+K7MAivF8kxCiP4zBnBtf6MwTlZ+95AA4DAAAAAAAAAAAAAADAisc4PrOvARiGa/YFAHmqF4DRH9pRpAC2hlr4oS1/NX5kCv7tfr/MPwO5qi0BpvBPlACcwGMcn0th/nRMAUC+r2YAQgx9CxfA67oe6E+oAIQfzmF3AZQMvyUE5ArNAPaG/13Q3RKEfLsKILLbv1QWlhDQkbUCeHd87Tbh2vcCx9k9lV8atSOzgPl5ZgTQsK2jeWREj54HVHRkSBUA1NXc/wEoAainqQKwBwAdsAyAc/j6XYCShB86oQDgh5W+bSf8UF94CVDyWX7hhxxFdt0jT/LNQ2/3H3IUC96WQAs9tOWQEEbfCQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAh/zcwmPuUtk0EAAAAAElFTkSuQmCC")
+})
+labels = Array[ExtResource("1_x35td")]([SubResource("Resource_x35td"), SubResource("Resource_7ypp3")])
