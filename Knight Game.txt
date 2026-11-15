@@ -9,6 +9,8 @@ Point to Nearest Coin pickup (toggle-able)
 Reveal Hidden Wall pickup, maybe? (makes hidden walls glow within radius, glow ONLY happens inside radius instead of affecting the entire block if it's in the radius) (this might be too powerful and undercut too much exploration)
 
 Breakable walls for chicken-type secrets (breakable with what? not a sword. maybe a hammer, or something more interesting to use than that. Bombs, so that you could also do bomb-jumps? OH MAN DO SOME BOMBERMAN 64 STUFF, ACTUALLY.)
+When destructible walls are bombed, destroy adjacent walls in chain reaction?
+
 
 I don't really want to spend any energy on combat, and I like the exploration aspects. I think it could be a game like EMUUROM or Promenade where you interact non-combatively with enemies and learn to utilize them without having the default option of killing them.
 
