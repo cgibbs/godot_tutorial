@@ -9,6 +9,8 @@ var knockback_timer: float = 0.0
 
 var has_dashed = false
 
+var movement_disabled = false
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var has_enemy_bounce_powerup = true
@@ -20,7 +22,10 @@ func _physics_process(delta: float) -> void:
 		knockback_timer -= delta
 		if knockback_timer <= 0.0:
 			knockback = Vector2.ZERO
-			
+	
+	elif movement_disabled:
+		pass
+	
 	else:
 		# Add the gravity.
 		if not is_on_floor():

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dhppqw5hij1pr"]
+
+[ext_resource type="Texture2D" uid="uid://baab8hngga3mg" path="res://assets/sprites/fan.png" id="1_8vgsl"]
+[ext_resource type="Script" uid="uid://bh2mam0v3p28c" path="res://scripts/fan.gd" id="1_ib1wi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p2xw"]
+size = Vector2(11, 15)
+
+[node name="fan" type="StaticBody2D" unique_id=677503916]
+script = ExtResource("1_ib1wi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1137189689]
+texture = ExtResource("1_8vgsl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094635636]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_4p2xw")
