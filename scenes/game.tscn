@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://but0yo0cbiml8" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://baeii16r70yxi" path="res://scenes/killzone.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://inhp7lxofni6" path="res://scenes/coin.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dgx32bkhf1q5l" path="res://scenes/enemy.tscn" id="6_p57ef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -458,6 +459,9 @@ _data = {
 &"RESET": SubResource("Animation_vtaks")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p2xw"]
+size = Vector2(10, 14)
+
 [node name="Game" type="Node2D" unique_id=1441690614]
 
 [node name="Level" type="TileMap" parent="." unique_id=360790961]
@@ -628,3 +632,11 @@ position = Vector2(-304, 340)
 
 [node name="Platform" parent="." unique_id=1181853453 instance=ExtResource("2_lnu2h")]
 position = Vector2(-400, 53)
+
+[node name="Enemy" parent="." unique_id=1994654366 node_paths=PackedStringArray("player") instance=ExtResource("6_p57ef")]
+position = Vector2(120, 112)
+player = NodePath("../Player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=250359125]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_4p2xw")
