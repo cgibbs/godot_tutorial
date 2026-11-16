@@ -17,3 +17,5 @@ I don't really want to spend any energy on combat, and I like the exploration as
 It would be fun to do enemy bounces and have enemies sometimes play pitched noises so the player plays a little song for longer bounce chains, like that thing in the new Yoshi game (the one Dunkey did a video about).
 
 Turn a one-way platform sideways in front of a horizontal tunnel to make a one-way passage.
+
+Enemy bounce powerup is implemented. Might make certain enemies deactivate on a timer to prevent bouncing in place to get to the right height, otherwise it'll be too easy.
