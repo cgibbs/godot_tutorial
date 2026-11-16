@@ -11,7 +11,6 @@ var has_enemy_bounce_powerup = true
 
 func _physics_process(delta: float) -> void:
 	if knockback_timer > 0.0:
-		print("in knockback timer!")
 		velocity = knockback
 		knockback_timer -= delta
 		if knockback_timer <= 0.0:
@@ -38,10 +37,8 @@ func _physics_process(delta: float) -> void:
 
 func apply_knockback(direction: Vector2, force: float, knockback_duration: float) -> void:
 	if (has_enemy_bounce_powerup):
-		print("has enemy bounce powerup")
-		knockback = velocity * (Vector2.UP + Vector2.RIGHT).normalized()
+		knockback = velocity * (Vector2.UP + Vector2.RIGHT).normalized() * 1.2
 		knockback_timer = knockback_duration
 	else:
-		print("knockback applied!")
 		knockback = direction * force
 		knockback_timer = knockback_duration
