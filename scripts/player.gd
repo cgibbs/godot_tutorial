@@ -12,7 +12,7 @@ var has_dashed = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var has_enemy_bounce_powerup = true
-var has_dash_powerup = true
+var has_dash_powerup = false
 
 func _physics_process(delta: float) -> void:
 	if knockback_timer > 0.0:
@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction := Input.get_axis("move_left", "move_right")
 		
-		if Input.is_action_just_pressed("dash") and has_dash_powerup and !has_dashed:
+		if Input.is_action_just_pressed("dash") and !is_on_floor() and has_dash_powerup and !has_dashed:
 			apply_knockback(Vector2(direction * SPEED, 0),3, .2, true)
 			has_dashed = true
 		

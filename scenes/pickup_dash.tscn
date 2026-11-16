@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b2jg6soj2dwyd"]
+
+[ext_resource type="Script" uid="uid://du8fhp4nud81d" path="res://scripts/pickup_dash.gd" id="1_cv2s6"]
+[ext_resource type="Texture2D" uid="uid://b43blsvl48ty" path="res://assets/sprites/p_wing_crisp.png" id="2_rcwnj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p2xw"]
+size = Vector2(16, 16)
+
+[node name="pickup_dash" type="Area2D" unique_id=1467519648]
+collision_mask = 2
+script = ExtResource("1_cv2s6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=131077336]
+texture = ExtResource("2_rcwnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1669544006]
+shape = SubResource("RectangleShape2D_4p2xw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
