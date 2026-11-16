@@ -12,7 +12,7 @@ extends Area2D
 
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 #	only detects objects on the same layer as the mask, e.g. Player is collision layer 2, so it'll 
 #	be detected by a mask set to 2
 	queue_free()
