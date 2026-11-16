@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://brwbbsuuud1qy"]
+
+[ext_resource type="Script" uid="uid://dumfmrh3tm4dg" path="res://scripts/knight_hurt.gd" id="1_ymom7"]
+[ext_resource type="Texture2D" uid="uid://xqowvc5ueo0a" path="res://assets/sprites/slime_purple.png" id="2_fug5m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6kxm"]
+atlas = ExtResource("2_fug5m")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61uot"]
+atlas = ExtResource("2_fug5m")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k833d"]
+atlas = ExtResource("2_fug5m")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qe5t"]
+atlas = ExtResource("2_fug5m")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4p2xw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6kxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61uot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k833d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qe5t")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="EnemyPurple" type="Area2D" unique_id=841141881 node_paths=PackedStringArray("timer")]
+collision_mask = 2
+script = ExtResource("1_ymom7")
+timer = NodePath("Timer")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=997411059]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_4p2xw")
+autoplay = "default"
+frame = 2
+frame_progress = 0.45500097
+
+[node name="Timer" type="Timer" parent="." unique_id=49735675]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

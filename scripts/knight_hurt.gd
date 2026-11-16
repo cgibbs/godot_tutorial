@@ -2,11 +2,6 @@ extends Node2D
 
 @export var timer: Timer
 
-# when collide with something that hurts the knight,
-# disable player movement for duration of timer and 
-# push knight away from center of object at a 
-# pre-determined angle and velocity
-
 const BOUNCEBACK_SPEED = 50
 
 var has_bounced = false
@@ -17,6 +12,17 @@ var has_bounced = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		var knockback_direction = (body.global_position - global_position).normalized()
-		player.apply_knockback(knockback_direction,100, 0.12)
-		print("knight hurt!")
+		if has_bounced == false:
+			var knockback_direction = (body.global_position - global_position).normalized()
+			player.apply_knockback(knockback_direction,100, 0.12)
+			print("knight hurt!")
+	print(scene_file_path)
+	if scene_file_path.split('/')[-1] == "enemy_purple.tscn":
+		timer.start()
+		has_bounced = true
+		
+
+
+
+func _on_timer_timeout() -> void:
+	has_bounced = false

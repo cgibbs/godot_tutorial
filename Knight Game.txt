@@ -19,3 +19,5 @@ It would be fun to do enemy bounces and have enemies sometimes play pitched nois
 Turn a one-way platform sideways in front of a horizontal tunnel to make a one-way passage.
 
 Enemy bounce powerup is implemented. Might make certain enemies deactivate on a timer to prevent bouncing in place to get to the right height, otherwise it'll be too easy.
+
+Airdash can use the knockback function, I'm now realizing.

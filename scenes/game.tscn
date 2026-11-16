@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://baeii16r70yxi" path="res://scenes/killzone.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://inhp7lxofni6" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dgx32bkhf1q5l" path="res://scenes/enemy.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://brwbbsuuud1qy" path="res://scenes/enemy_purple.tscn" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -472,9 +473,9 @@ tracks/0/path = NodePath(".:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-272, -0.25, 0, 0.25, 0, -272, -0.083333336, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-268, -0.25, 0, 0.25, 0, -268, -0.07930556, 0, 0, 0),
+"times": PackedFloat32Array(0.024166666, 0.5)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -483,9 +484,9 @@ tracks/1/path = NodePath(".:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(223, -0.25, 0, 0.25, 0, 220, -0.083333336, 0.5, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(229, -0.25, 0, 0.25, 0, 226, -0.07930556, 0.5, 0, 0),
+"times": PackedFloat32Array(0.024166666, 0.5)
 }
 
 [sub_resource type="Animation" id="Animation_dinhu"]
@@ -519,6 +520,64 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_kvpfn"),
 &"float": SubResource("Animation_dinhu")
+}
+
+[sub_resource type="Animation" id="Animation_kvuet"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-361, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-83, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ca42v"]
+resource_name = "float"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-361, -0.25, 0, 0.25, 0, -361, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-83, -0.25, 0, 0.25, 0, -86, -0.083333336, 0.5, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rysoc"]
+_data = {
+&"RESET": SubResource("Animation_kvuet"),
+&"float": SubResource("Animation_ca42v")
 }
 
 [sub_resource type="Animation" id="Animation_trtic"]
@@ -578,6 +637,65 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_trtic"),
 &"float": SubResource("Animation_ir15t")
+}
+
+[sub_resource type="Animation" id="Animation_rysoc"]
+length = 0.5
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(-440, -0.25, 0, 0.25, 0, -440, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(15, -0.25, 0, 0.25, 0, 12, -0.083333336, 0.5, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_ssvqc"]
+resource_name = "float"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-440, -0.25, 0, 0.25, 0, -440, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(15, -0.25, 0, 0.25, 0, 12, -0.083333336, 0.5, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_264po"]
+_data = {
+&"RESET": SubResource("Animation_rysoc"),
+&"float": SubResource("Animation_ssvqc")
 }
 
 [node name="Game" type="Node2D" unique_id=1441690614]
@@ -770,7 +888,7 @@ shape = SubResource("RectangleShape2D_4p2xw")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy" unique_id=2125565764]
 
 [node name="Enemy2" parent="Enemies" unique_id=841141881 node_paths=PackedStringArray("player") instance=ExtResource("6_p57ef")]
-position = Vector2(-272, 223)
+position = Vector2(-268, 229)
 player = NodePath("../../Player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2" unique_id=310452843]
@@ -780,6 +898,18 @@ shape = SubResource("RectangleShape2D_4p2xw")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy2" unique_id=676394140]
 libraries/ = SubResource("AnimationLibrary_kvuet")
 autoplay = &"RESET"
+
+[node name="Enemy6" parent="Enemies" unique_id=2055265735 node_paths=PackedStringArray("player") instance=ExtResource("6_p57ef")]
+position = Vector2(-361, -83)
+player = NodePath("../../Player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy6" unique_id=272987476]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_4p2xw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy6" unique_id=1429432412]
+libraries/ = SubResource("AnimationLibrary_rysoc")
+autoplay = &"float"
 
 [node name="Enemy3" parent="Enemies" unique_id=1704371082 node_paths=PackedStringArray("player") instance=ExtResource("6_p57ef")]
 position = Vector2(-307, 187)
@@ -802,3 +932,15 @@ position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_4p2xw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy4" unique_id=911928388]
+
+[node name="EnemyPurple" parent="Enemies" unique_id=254156418 node_paths=PackedStringArray("player") instance=ExtResource("7_u5sy4")]
+position = Vector2(-440, 15)
+player = NodePath("../../Player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyPurple" unique_id=1279956369]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_4p2xw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/EnemyPurple" unique_id=712163023]
+libraries/ = SubResource("AnimationLibrary_264po")
+autoplay = &"RESET"

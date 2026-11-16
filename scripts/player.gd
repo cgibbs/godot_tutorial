@@ -37,6 +37,10 @@ func _physics_process(delta: float) -> void:
 
 func apply_knockback(direction: Vector2, force: float, knockback_duration: float) -> void:
 	if (has_enemy_bounce_powerup):
+		#if is_on_floor():
+			#position.y -= 2
+		if velocity.y < JUMP_VELOCITY:
+			velocity.y = JUMP_VELOCITY
 		knockback = velocity * (Vector2.UP + Vector2.RIGHT).normalized() * 1.2
 		knockback_timer = knockback_duration
 	else:

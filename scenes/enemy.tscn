@@ -39,7 +39,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Area2D" type="Area2D" unique_id=841141881 node_paths=PackedStringArray("timer")]
+[node name="Enemy" type="Area2D" unique_id=841141881 node_paths=PackedStringArray("timer")]
 collision_mask = 2
 script = ExtResource("1_md0e3")
 timer = NodePath("Timer")
