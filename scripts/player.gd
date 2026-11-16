@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -300.0
 var knockback: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0
 
+var has_enemy_bounce_powerup = true
+
 func _physics_process(delta: float) -> void:
 	if knockback_timer > 0.0:
 		print("in knockback timer!")
@@ -35,6 +37,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func apply_knockback(direction: Vector2, force: float, knockback_duration: float) -> void:
-	print("knockback applied!")
-	knockback = direction * force
-	knockback_timer = knockback_duration
+	if (has_enemy_bounce_powerup):
+		print("has enemy bounce powerup")
+		knockback = velocity * (Vector2.UP + Vector2.RIGHT).normalized()
+		knockback_timer = knockback_duration
+	else:
+		print("knockback applied!")
+		knockback = direction * force
+		knockback_timer = knockback_duration
