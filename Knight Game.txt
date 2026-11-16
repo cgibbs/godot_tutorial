@@ -21,3 +21,7 @@ Turn a one-way platform sideways in front of a horizontal tunnel to make a one-w
 Enemy bounce powerup is implemented. Might make certain enemies deactivate on a timer to prevent bouncing in place to get to the right height, otherwise it'll be too easy.
 
 Airdash can use the knockback function, I'm now realizing.
+
+Fans that push the knight while mid-air could make for more interesting platforming.
+
+Bouncy blocks that aren't enemies, and thus don't require the enemy bounce powerup? Could be fun, and would extend the puzzles a bit and introduce bouncing behavior before the powerup is acquired.

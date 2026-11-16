@@ -15,7 +15,6 @@ func _on_body_entered(body: Node2D) -> void:
 		if has_bounced == false:
 			var knockback_direction = (body.global_position - global_position).normalized()
 			player.apply_knockback(knockback_direction,100, 0.12)
-			print("knight hurt!")
 	print(scene_file_path)
 	if scene_file_path.split('/')[-1] == "enemy_purple.tscn":
 		timer.start()
