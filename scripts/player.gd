@@ -47,6 +47,14 @@ func _physics_process(delta: float) -> void:
 			apply_knockback(Vector2(direction * SPEED, 0),3, .2, true)
 			has_dashed = true
 		
+		if is_on_floor():
+			if direction == 0:
+				animated_sprite.play("idle")
+			else:
+				animated_sprite.play("run")
+		else:
+			animated_sprite.play("jump")
+		
 		if direction:
 			if direction > 0:
 				animated_sprite.flip_h = false

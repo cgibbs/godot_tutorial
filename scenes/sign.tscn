@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cvxflm4v08q4t"]
+
+[ext_resource type="Script" uid="uid://bi738stwhhkn8" path="res://scripts/sign.gd" id="1_kd50q"]
+[ext_resource type="Texture2D" uid="uid://but0yo0cbiml8" path="res://assets/sprites/world_tileset.png" id="2_8yyji"]
+[ext_resource type="FontFile" uid="uid://dn3o77ljd2dpj" path="res://assets/fonts/PixelOperator8.ttf" id="3_8yyji"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p2xw"]
+size = Vector2(16, 14)
+
+[node name="sign" type="Node2D" unique_id=684177452]
+script = ExtResource("1_kd50q")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2082088477]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=521248913]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_4p2xw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=964580003]
+texture = ExtResource("2_8yyji")
+region_enabled = true
+region_rect = Rect2(129, 48, 14, 16)
+
+[node name="Label" type="Label" parent="." unique_id=1562468367]
+visible = false
+offset_left = -58.0
+offset_top = -42.0
+offset_right = -18.0
+offset_bottom = -19.0
+theme_override_fonts/font = ExtResource("3_8yyji")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1348872819]
+visible = false
+offset_left = -58.0
+offset_top = -33.0
+offset_right = -18.0
+offset_bottom = -10.0
+theme_override_fonts/font = ExtResource("3_8yyji")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=414206844]
+visible = false
+offset_left = -58.0
+offset_top = -25.0
+offset_right = -18.0
+offset_bottom = -2.0
+theme_override_fonts/font = ExtResource("3_8yyji")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]

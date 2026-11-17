@@ -12,62 +12,23 @@ position = Vector2(7.9908447, 41.696426)
 
 [sub_resource type="Resource" id="Resource_7ypp3"]
 script = ExtResource("1_x35td")
-text = "return to checkpoint pickup here"
-max_line_width = 600.0
-position = Vector2(-92.8392, 389.70065)
-
-[sub_resource type="Resource" id="Resource_k7c1s"]
-script = ExtResource("1_x35td")
 text = "use bomb here"
 max_line_width = 600.0
 position = Vector2(-94.23941, 160.52405)
 
-[sub_resource type="Resource" id="Resource_656mt"]
-script = ExtResource("1_x35td")
-text = "bomb pickup"
-max_line_width = 600.0
-position = Vector2(-180.22665, -431.0019)
-
-[sub_resource type="Resource" id="Resource_6io2o"]
-script = ExtResource("1_x35td")
-text = "enemy bounce area"
-max_line_width = 600.0
-position = Vector2(-323.13098, 194.93767)
-
-[sub_resource type="Resource" id="Resource_qim2p"]
+[sub_resource type="Resource" id="Resource_k7c1s"]
 script = ExtResource("1_x35td")
 text = "bounce pickup"
 max_line_width = 600.0
 position = Vector2(609.15845, 531.77057)
 
-[sub_resource type="Resource" id="Resource_ml5tw"]
+[sub_resource type="Resource" id="Resource_656mt"]
 script = ExtResource("1_x35td")
 text = "bounce competency check"
 max_line_width = 600.0
 position = Vector2(697.78094, 447.66394)
 
-[sub_resource type="Resource" id="Resource_fpvus"]
-script = ExtResource("1_x35td")
-text = "Leads to airdash pickup eventually"
-max_line_width = 600.0
-position = Vector2(86.86578, -470.36786)
-
-[sub_resource type="Resource" id="Resource_juxh7"]
-script = ExtResource("1_x35td")
-text = "bowled area you can fall to from
-snow area, lets you get a coin and
-drop to lower otherwise inaccessible ledge"
-max_line_width = 600.0
-position = Vector2(256.25925, -411.19815)
-
-[sub_resource type="Resource" id="Resource_q4qti"]
-script = ExtResource("1_x35td")
-text = "can only get via double jump
-or airdash"
-max_line_width = 600.0
-position = Vector2(63.678375, -379.39218)
-
-[sub_resource type="Resource" id="Resource_tl1w1"]
+[sub_resource type="Resource" id="Resource_6io2o"]
 script = ExtResource("1_x35td")
 text = "airdash"
 max_line_width = 600.0
@@ -117,4 +78,4 @@ Vector2i(3, 0): PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAA
 Vector2i(3, 1): PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAAWxJREFUeJzt2L0NgCAQgFEcwg1u/4nYwCG0sjFGEn8A9b2K8ii+5CAlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOjXFDG3ngF6NrQe4IpS4GPOr74fPO1VgWyDFzhc02VAe6FPEbPg4V5Vgzpa2dfI13O9qeC/ToV25nNN1NCfYpTe3fBdQ0rl1bzeOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8EMLX8UmOrlZlQwAAAAASUVORK5CYII="),
 Vector2i(4, -2): PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAASBJREFUeJztzkERAAAEADBh9C8mBCG489kSLAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAblVmfx8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgYwC7VwIzOgGW4gAAAABJRU5ErkJggg==")
 })
-labels = Array[ExtResource("1_x35td")]([SubResource("Resource_x35td"), SubResource("Resource_7ypp3"), SubResource("Resource_k7c1s"), SubResource("Resource_656mt"), SubResource("Resource_6io2o"), SubResource("Resource_qim2p"), SubResource("Resource_ml5tw"), SubResource("Resource_fpvus"), SubResource("Resource_juxh7"), SubResource("Resource_q4qti"), SubResource("Resource_tl1w1")])
+labels = Array[ExtResource("1_x35td")]([SubResource("Resource_x35td"), SubResource("Resource_7ypp3"), SubResource("Resource_k7c1s"), SubResource("Resource_656mt"), SubResource("Resource_6io2o")])
