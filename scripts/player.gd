@@ -13,7 +13,7 @@ var movement_disabled = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-var has_enemy_bounce_powerup = true
+var has_enemy_bounce_powerup = false
 var has_dash_powerup = false
 
 func _physics_process(delta: float) -> void:

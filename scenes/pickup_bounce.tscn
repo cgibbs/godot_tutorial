@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://tswskx0xv0lx"]
+
+[ext_resource type="Script" uid="uid://brgwayo1n82up" path="res://scripts/pickup_bounce.gd" id="1_nxhya"]
+[ext_resource type="Texture2D" uid="uid://bn5vl2d2jws0b" path="res://assets/sprites/k_shoe_crisp.png" id="2_0ikpd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p2xw"]
+size = Vector2(16, 16)
+
+[node name="pickup_bounce" type="Area2D" unique_id=1467519648]
+collision_mask = 2
+script = ExtResource("1_nxhya")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=131077336]
+texture = ExtResource("2_0ikpd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1669544006]
+shape = SubResource("RectangleShape2D_4p2xw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
