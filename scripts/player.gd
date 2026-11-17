@@ -41,13 +41,11 @@ func reset_checkpoint() -> void:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("reset_to_checkpoint") and able_to_reset:
-		print(checkpoint_held_press_time)
 		checkpoint_held_press_time += delta
 		if checkpoint_held_press_time > 1:
 			reset_checkpoint();
 		
 	if Input.is_action_just_released("reset_to_checkpoint") and able_to_reset:
-		print(checkpoint_held_press_time)
 		if checkpoint_held_press_time < 1:
 			position.x = last_torch_x
 			position.y = last_torch_y
@@ -105,8 +103,6 @@ func _physics_process(delta: float) -> void:
 
 func apply_knockback(direction: Vector2, force: float, knockback_duration: float, ignore_powerup: bool = false) -> void:
 	if (has_enemy_bounce_powerup and !ignore_powerup):
-		#if is_on_floor():
-			#position.y -= 2
 		if velocity.y < JUMP_VELOCITY:
 			velocity.y = JUMP_VELOCITY
 		knockback = velocity * (Vector2.UP + Vector2.RIGHT).normalized() * 1.2

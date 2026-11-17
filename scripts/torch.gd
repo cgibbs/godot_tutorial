@@ -6,7 +6,6 @@ extends Node2D
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		print(collision_shape.global_position.x)
 		player.last_torch_x = collision_shape.global_position.x
 		player.last_torch_y = collision_shape.global_position.y
 		for torch in get_tree().get_nodes_in_group("Torches"):
