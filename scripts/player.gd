@@ -14,8 +14,8 @@ var movement_disabled = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
 
-var has_enemy_bounce_powerup = false
-var has_dash_powerup = false
+var has_enemy_bounce_powerup = true
+var has_dash_powerup = true
 
 var last_torch_x = 0
 var last_torch_y = 0
