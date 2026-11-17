@@ -169,7 +169,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4p2xw"]
-radius = 5.0990195
+radius = 6.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1918347948]
 z_index = 5
@@ -183,7 +183,7 @@ animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1382709781]
-position = Vector2(0, -5)
+position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_4p2xw")
 
 [node name="Timer" type="Timer" parent="." unique_id=1006459411]
