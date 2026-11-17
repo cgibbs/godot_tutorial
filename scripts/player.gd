@@ -12,11 +12,48 @@ var has_dashed = false
 var movement_disabled = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var timer: Timer = $Timer
 
 var has_enemy_bounce_powerup = false
 var has_dash_powerup = false
 
+var last_torch_x = 0
+var last_torch_y = 0
+
+var checkpoint_held_press_time = 0
+
+var able_to_reset = true
+
+func reset_checkpoint() -> void:
+	for torch in get_tree().get_nodes_in_group("Torches"):
+		var animatedSprite = torch.get_node("AnimatedSprite2D");
+		if animatedSprite:
+			animatedSprite.play("unlit");
+	last_torch_x = 0
+	last_torch_y = 0
+	position.x = 0
+	position.y = 0
+	checkpoint_held_press_time = 0
+	Input.action_release("reset_to_checkpoint")
+	timer.start()
+	able_to_reset = false
+	return
+
 func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("reset_to_checkpoint") and able_to_reset:
+		print(checkpoint_held_press_time)
+		checkpoint_held_press_time += delta
+		if checkpoint_held_press_time > 1:
+			reset_checkpoint();
+		
+	if Input.is_action_just_released("reset_to_checkpoint") and able_to_reset:
+		print(checkpoint_held_press_time)
+		if checkpoint_held_press_time < 1:
+			position.x = last_torch_x
+			position.y = last_torch_y
+			checkpoint_held_press_time = 0
+			return
+	
 	if knockback_timer > 0.0:
 		velocity = knockback
 		knockback_timer -= delta
@@ -77,3 +114,8 @@ func apply_knockback(direction: Vector2, force: float, knockback_duration: float
 	else:
 		knockback = direction * force
 		knockback_timer = knockback_duration
+
+
+func _on_timer_timeout() -> void:
+	able_to_reset = true
+	pass # Replace with function body.
