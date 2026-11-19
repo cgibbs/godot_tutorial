@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Tutorial"
+config/name="Knight Game"
+config/description="This ended up more Shovel Knight-y than I expected, not gonna lie."
 run/main_scene="uid://fmrvonhchdmf"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"

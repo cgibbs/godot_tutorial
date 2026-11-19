@@ -15,7 +15,7 @@ var movement_disabled = false
 @onready var timer: Timer = $Timer
 
 var has_enemy_bounce_powerup = true
-var has_dash_powerup = true
+var has_dash_powerup = false
 
 var last_torch_x = 0
 var last_torch_y = 0
