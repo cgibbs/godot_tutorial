@@ -10,9 +10,11 @@ var hasProcessedExplosionForWalls = false
 
 @onready var timer: Timer = $Timer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var player: CharacterBody2D = get_tree().get_first_node_in_group("Player")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(player)
 	timer.start(1)
 
 
@@ -27,10 +29,11 @@ func _process(delta: float) -> void:
 		if (!hasProcessedExplosionForWalls):
 			hasProcessedExplosionForWalls = true
 			for wall in get_tree().get_nodes_in_group("Bombable"):
-				print("checking wall")
-				print(wall.global_position.distance_to(global_position))
 				if (wall.global_position.distance_to(global_position) < 30):
 					wall.queue_free()
+			if (player.global_position.distance_to(global_position) < 60):
+				var knockback_direction = (player.global_position - global_position).normalized()
+				player.apply_knockback(knockback_direction,200, 0.12, true)
 		# do the block destruction
 	if phase == 3:
 		queue_free()
