@@ -17,6 +17,7 @@ var movement_disabled = false
 
 var has_enemy_bounce_powerup = true
 var has_dash_powerup = false
+var has_bomb_powerup = false
 # this should probably just be for messing around in the post-game, it's way too strong
 var has_balloon_powerup = false
 
@@ -45,7 +46,7 @@ func reset_checkpoint() -> void:
 	return
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("bomb"):
+	if Input.is_action_just_pressed("bomb") and has_bomb_powerup:
 		print("checking for existing bombs")
 		if (get_tree().get_node_count_in_group("Bombs") == 0):
 			print("Laying down a bomb!")

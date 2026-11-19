@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dq782ro65emox"]
+
+[ext_resource type="Script" uid="uid://b557523y4pi8q" path="res://scripts/pickup_bomb.gd" id="1_y571n"]
+[ext_resource type="Texture2D" uid="uid://83ya7yx1cf0b" path="res://assets/sprites/bomberman_nes.png" id="2_aeyf4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p2xw"]
+size = Vector2(16, 16)
+
+[node name="pickup_bomb" type="Area2D" unique_id=1467519648]
+collision_mask = 2
+script = ExtResource("1_y571n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=131077336]
+texture = ExtResource("2_aeyf4")
+region_enabled = true
+region_rect = Rect2(0, 48, 17, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1669544006]
+shape = SubResource("RectangleShape2D_4p2xw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
