@@ -47,9 +47,7 @@ func reset_checkpoint() -> void:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("bomb") and has_bomb_powerup:
-		print("checking for existing bombs")
 		if (get_tree().get_node_count_in_group("Bombs") == 0):
-			print("Laying down a bomb!")
 			const BOMB = preload("../scenes/bomb.tscn")
 			var bomb = BOMB.instantiate()
 			get_tree().get_root().add_child(bomb)
