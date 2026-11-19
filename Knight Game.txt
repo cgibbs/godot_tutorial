@@ -30,4 +30,13 @@ Bombs aren't reset by checkpoint. I'm not sure why that matters yet, but I'm sur
 
 There's a bomb glitch that happens when you jump up against a single-tile ceiling and lay a bomb, and it just gets your character above the ceiling. That's too fun to delete from the game, it'll just be a neat hidden feature.
 
-It would be fun to have an Easter Egg where you stand on a west-facing ledge near the top of the map and it replaces the level with the Mega Man 2 start screen. Scott would appreciate it, at least. Maybe re
+It would be fun to have an Easter Egg where you stand on a west-facing ledge near the top of the map and it replaces the level with the Mega Man 2 start screen. Scott would appreciate it, at least. 
+
+TODO BEFORE RELEASE:
+UI elements
+* coin count
+* compass
+* some kind of "you win" state (maybe just a static scene where the knight is celebrating or looking pensively from a mountaintop or something, I dunno yet)
+* speedrun timer (option to turn on in pause menu?)
+Game Elements
+* compass pickup
