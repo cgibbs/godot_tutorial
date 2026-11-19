@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://but0yo0cbiml8" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://baeii16r70yxi" path="res://scenes/killzone.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://inhp7lxofni6" path="res://scenes/coin.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://dgx32bkhf1q5l" path="res://scenes/enemy.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://brwbbsuuud1qy" path="res://scenes/enemy_purple.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://b2jg6soj2dwyd" path="res://scenes/pickup_dash.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://dhppqw5hij1pr" path="res://scenes/fan.tscn" id="9_0tnpc"]
@@ -549,182 +548,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p2xw"]
 size = Vector2(10, 14)
 
-[sub_resource type="Animation" id="Animation_kvpfn"]
-length = 0.5
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(-268, -0.25, 0, 0.25, 0, -268, -0.07930556, 0, 0, 0),
-"times": PackedFloat32Array(0.024166666, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(229, -0.25, 0, 0.25, 0, 226, -0.07930556, 0.5, 0, 0),
-"times": PackedFloat32Array(0.024166666, 0.5)
-}
-
-[sub_resource type="Animation" id="Animation_dinhu"]
-resource_name = "float"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-272, -0.25, 0, 0.25, 0, -272, -0.083333336, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(223, -0.25, 0, 0.25, 0, 220, -0.083333336, 0.5, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kvuet"]
-_data = {
-&"RESET": SubResource("Animation_kvpfn"),
-&"float": SubResource("Animation_dinhu")
-}
-
-[sub_resource type="Animation" id="Animation_kvuet"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-361, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-83, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_ca42v"]
-resource_name = "float"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-361, -0.25, 0, 0.25, 0, -361, -0.083333336, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-83, -0.25, 0, 0.25, 0, -86, -0.083333336, 0.5, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rysoc"]
-_data = {
-&"RESET": SubResource("Animation_kvuet"),
-&"float": SubResource("Animation_ca42v")
-}
-
-[sub_resource type="Animation" id="Animation_trtic"]
-length = 0.5
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-307, -0.25, 0, 0.25, 0, -307, -0.083333336, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(187, -0.25, 0, 0.25, 0, 184, -0.083333336, 0.5, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="Animation" id="Animation_ir15t"]
-resource_name = "float"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-307, -0.25, 0, 0.25, 0, -307, -0.083333336, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(187, -0.25, 0, 0.25, 0, 185, -0.083333336, 0.33333334, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ca42v"]
-_data = {
-&"RESET": SubResource("Animation_trtic"),
-&"float": SubResource("Animation_ir15t")
-}
-
 [sub_resource type="Animation" id="Animation_rysoc"]
 length = 0.5
 loop_mode = 2
@@ -784,249 +607,8 @@ _data = {
 &"float": SubResource("Animation_ssvqc")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4n28"]
-size = Vector2(10, 14)
-
-[sub_resource type="Animation" id="Animation_264po"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-73, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(326, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_1kice"]
-resource_name = "float"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(-73, -0.25, 0, 0.25, 0, -73, -0.083333336, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(326, -0.25, 0, 0.25, 0, 323, -0.083333336, 0.5, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5newe"]
-_data = {
-&"RESET": SubResource("Animation_264po"),
-&"float": SubResource("Animation_1kice")
-}
-
-[sub_resource type="Animation" id="Animation_37s47"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-19, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(299, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_bt5mj"]
-resource_name = "float"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(-19, -0.25, 0, 0.25, 0, -19, -0.083333336, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(299, -0.25, 0, 0.25, 0, 296, -0.083333336, 0.5, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_e1j6l"]
-_data = {
-&"RESET": SubResource("Animation_37s47"),
-&"float": SubResource("Animation_bt5mj")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeg52"]
 size = Vector2(80, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgajr"]
-size = Vector2(10, 14)
-
-[sub_resource type="Animation" id="Animation_qnb83"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(167, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-503, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_sww3w"]
-resource_name = "float"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 1),
-"points": PackedFloat32Array(167, -0.25, 0, 0.25, 0, 167, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 1),
-"points": PackedFloat32Array(-503, -0.25, 0, 0.25, 0, -506, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_suyxu"]
-_data = {
-&"RESET": SubResource("Animation_qnb83"),
-&"float": SubResource("Animation_sww3w")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kos7"]
-size = Vector2(10, 14)
-
-[sub_resource type="Animation" id="Animation_sgl2t"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-16, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-580, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_qouja"]
-resource_name = "float"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-16, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-580, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wljb1"]
-_data = {
-&"RESET": SubResource("Animation_sgl2t"),
-&"float": SubResource("Animation_qouja")
-}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yj68j"]
 size = Vector2(10, 14)
@@ -1321,227 +903,6 @@ _data = {
 &"float": SubResource("Animation_458eo")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5edj"]
-size = Vector2(10, 14)
-
-[sub_resource type="Animation" id="Animation_i4re6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-405, -824)]
-}
-
-[sub_resource type="Animation" id="Animation_3hbvx"]
-resource_name = "float"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-405, -824), Vector2(-405, -827)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_q8j3a"]
-_data = {
-&"RESET": SubResource("Animation_i4re6"),
-&"float": SubResource("Animation_3hbvx")
-}
-
-[sub_resource type="Animation" id="Animation_js0lu"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-26, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-678, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_gxtfn"]
-resource_name = "float"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(1, 1),
-"points": PackedFloat32Array(-25, -0.25, 0, 0.25, 0, -25, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(1, 1),
-"points": PackedFloat32Array(-672, -0.25, 0, 0.25, 0, -675, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_twgab"]
-_data = {
-&"RESET": SubResource("Animation_js0lu"),
-&"float": SubResource("Animation_gxtfn")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8or0l"]
-size = Vector2(10, 14)
-
-[sub_resource type="Animation" id="Animation_v2yb1"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-266, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-321, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_nepv3"]
-resource_name = "float"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(1, 1),
-"points": PackedFloat32Array(-266, -0.25, 0, 0.25, 0, -266, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(1, 1),
-"points": PackedFloat32Array(-324, -0.25, 0, 0.25, 0, -327, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7025r"]
-_data = {
-&"RESET": SubResource("Animation_v2yb1"),
-&"float": SubResource("Animation_nepv3")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1tn6"]
-size = Vector2(10, 14)
-
-[sub_resource type="Animation" id="Animation_8ool0"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(451, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-196, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_0sl42"]
-resource_name = "float"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 1),
-"points": PackedFloat32Array(451, -0.25, 0, 0.25, 0, 451, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 1),
-"points": PackedFloat32Array(-196, -0.25, 0, 0.25, 0, -199, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oaba0"]
-_data = {
-&"RESET": SubResource("Animation_8ool0"),
-&"float": SubResource("Animation_0sl42")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igdjl"]
 size = Vector2(10, 14)
 
@@ -1766,13 +1127,7 @@ _data = {
 &"float": SubResource("Animation_ms3bu")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qck8b"]
-size = Vector2(10, 14)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83wu6"]
-size = Vector2(10, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikjna"]
 size = Vector2(10, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf1su"]
@@ -1798,7 +1153,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-393203, 0, 1, -393202, 0, 1, -393201, 0, 1, -327665, 0, 1, -327666, 0, 1, -327667, 0, 1, -327664, 0, 1, -458760, 0, 1, -458761, 0, 1, -524297, 0, 1, -524296, 0, 1, -589832, 0, 1, -589833, 0, 1, -655369, 0, 1, -655368, 0, 1, -720905, 0, 1, -720904, 0, 1, -786440, 0, 1, -786441, 0, 1, -851977, 0, 1, -851976, 0, 1, -917512, 0, 1, -983048, 0, 1, -983049, 0, 1, -917513, 0, 1, -1310733, 0, 1, -1245197, 0, 1, -1245196, 0, 1, -1310732, 0, 1, -1310731, 0, 1, -1245195, 0, 1, -1179659, 0, 1, -1179658, 0, 1, -1245194, 0, 1, 851962, 0, 1, 917498, 0, 1, 983034, 0, 1, 458725, 0, 1, 393189, 0, 1, 393190, 0, 1, 393191, 0, 1, 393192, 0, 1, 458728, 0, 1, 458729, 0, 1, 458727, 0, 1, 458726, 0, 1, -2686987, 393216, 1, -2686986, 393216, 1, -2752522, 393216, 1, -2752523, 393216, 1, -2818059, 393216, 1, -2818058, 393216, 1, -2818060, 393216, 1, -2818061, 393216, 1, -2752525, 393216, 1, -2686989, 393216, 1, -2686988, 393216, 1, -2752524, 393216, 1, 262118, 0, 1, 262119, 0, 1, 327654, 0, 1, 327655, 0, 1, -3342348, 393216, 1, -3342347, 393216, 1, -3276811, 393216, 1, -3276812, 393216, 1, -3342349, 393216, 1, -3276813, 393216, 1, -3276814, 393216, 1, -3276815, 393216, 1, -3342351, 393216, 1, -3342350, 393216, 1, -2490340, 393216, 1, -2490339, 393216, 1, -2424803, 393216, 1, -2424804, 393216, 1, -655323, 0, 1, -589787, 0, 1, 1703940, 262144, 1, 1703941, 262144, 1, 1769477, 262144, 1, 1769476, 262144, 1, 1638451, 262144, 1, 1703987, 262144, 1, 1638452, 262144, 1, 1703988, 262144, 1, 1638453, 262144, 1, 1703989, 262144, 1, 1638450, 262144, 1, 1703986, 262144, 1, 1245127, 262144, 1, 1245126, 262144, 1, 1310662, 262144, 1, 1310661, 262144, 1, 1245125, 262144, 1, 1310663, 262144, 1, 1245122, 262144, 1, 1245123, 262144, 1, 1310659, 262144, 1, 1310658, 262144, 1, 1507271, 262144, 1, 1507272, 262144, 1, 1572808, 262144, 1, 1572807, 262144, 1, 3080173, 262144, 1, 3145709, 262144, 1, 3080174, 262144, 1, 3145710, 262144, 1, 2097110, 262144, 1, 2097111, 262144, 1, 2097112, 262144, 1, 2162648, 262144, 1, 2162647, 262144, 1, 2162646, 262144, 1, 3211235, 262144, 1, 3276771, 262144, 1, 3211236, 262144, 1, 3276772, 262144, 1, 2228195, 262144, 1, 2162659, 262144, 1, 2162663, 262144, 0, 2097126, 262144, 0, 1834981, 262144, 0, 1769444, 262144, 0, 3145708, 262144, 1, 1310664, 262144, 1, 1245128, 262144, 1, 1441749, 262144, 1, 1441750, 262144, 1, 1507286, 262144, 1, 1507285, 262144, 1, 1179669, 262144, 1, 1179670, 262144, 1, 1245206, 262144, 1, 1245205, 262144, 1)
 
 [node name="Player" parent="." unique_id=1918347948 instance=ExtResource("1_uwrxv")]
-position = Vector2(658, 253)
+position = Vector2(-250, 414)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1754656692]
 zoom = Vector2(4, 4)
@@ -2140,57 +1495,6 @@ rotation = -3.1415925
 
 [node name="Enemies" type="Node2D" parent="." unique_id=632661333]
 
-[node name="Enemy" parent="Enemies" unique_id=1994654366 instance=ExtResource("6_p57ef")]
-position = Vector2(120, 112)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy" unique_id=250359125]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_4p2xw")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy" unique_id=2125565764]
-
-[node name="Enemy2" parent="Enemies" unique_id=270116384 instance=ExtResource("6_p57ef")]
-position = Vector2(-268, 229)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2" unique_id=310452843]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_4p2xw")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy2" unique_id=676394140]
-libraries/ = SubResource("AnimationLibrary_kvuet")
-autoplay = &"RESET"
-
-[node name="Enemy6" parent="Enemies" unique_id=2055265735 instance=ExtResource("6_p57ef")]
-position = Vector2(-361, -83)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy6" unique_id=272987476]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_4p2xw")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy6" unique_id=1429432412]
-libraries/ = SubResource("AnimationLibrary_rysoc")
-autoplay = &"float"
-
-[node name="Enemy3" parent="Enemies" unique_id=1704371082 instance=ExtResource("6_p57ef")]
-position = Vector2(-307, 187)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy3" unique_id=723157127]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_4p2xw")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy3" unique_id=1205477310]
-libraries/ = SubResource("AnimationLibrary_ca42v")
-autoplay = &"RESET"
-
-[node name="Enemy4" parent="Enemies" unique_id=1691656955 instance=ExtResource("6_p57ef")]
-position = Vector2(-232, 273)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy4" unique_id=1072279012]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_4p2xw")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy4" unique_id=911928388]
-
 [node name="EnemyPurple" parent="Enemies" unique_id=254156418 instance=ExtResource("7_u5sy4")]
 position = Vector2(-440, 15)
 
@@ -2201,28 +1505,6 @@ shape = SubResource("RectangleShape2D_4p2xw")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/EnemyPurple" unique_id=712163023]
 libraries/ = SubResource("AnimationLibrary_264po")
 autoplay = &"RESET"
-
-[node name="Enemy5" parent="Enemies" unique_id=942275719 instance=ExtResource("6_p57ef")]
-position = Vector2(-73, 326)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy5" unique_id=1122633648]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_d4n28")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy5" unique_id=1048716328]
-libraries/ = SubResource("AnimationLibrary_5newe")
-autoplay = &"float"
-
-[node name="Enemy7" parent="Enemies" unique_id=923039010 instance=ExtResource("6_p57ef")]
-position = Vector2(-19, 299)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy7" unique_id=2128679417]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_d4n28")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy7" unique_id=1499316489]
-libraries/ = SubResource("AnimationLibrary_e1j6l")
-autoplay = &"float"
 
 [node name="fan" parent="Enemies" unique_id=1793834274 node_paths=PackedStringArray("area_2d", "player") instance=ExtResource("9_0tnpc")]
 position = Vector2(-633, 249)
@@ -2281,28 +1563,6 @@ modulate = Color(1, 1, 1, 0.40392157)
 scale = Vector2(80.09, 16.17)
 texture = ExtResource("10_vtaks")
 
-[node name="Enemy8" parent="Enemies" unique_id=1956584204 instance=ExtResource("6_p57ef")]
-position = Vector2(167, -503)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy8" unique_id=584698958]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_dgajr")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy8" unique_id=1792564990]
-libraries/ = SubResource("AnimationLibrary_suyxu")
-autoplay = &"float"
-
-[node name="Enemy9" parent="Enemies" unique_id=1491549605 instance=ExtResource("6_p57ef")]
-position = Vector2(-16, -580)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy9" unique_id=1740186253]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_5kos7")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy9" unique_id=868020384]
-libraries/ = SubResource("AnimationLibrary_wljb1")
-autoplay = &"float"
-
 [node name="EnemyPurple2" parent="Enemies" unique_id=218706242 instance=ExtResource("7_u5sy4")]
 position = Vector2(-359, -816)
 
@@ -2358,50 +1618,6 @@ shape = SubResource("RectangleShape2D_yj68j")
 libraries/ = SubResource("AnimationLibrary_h3rex")
 autoplay = &"float"
 
-[node name="Enemy10" parent="Enemies" unique_id=815327677 instance=ExtResource("6_p57ef")]
-position = Vector2(-405, -824)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy10" unique_id=69368257]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_p5edj")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy10" unique_id=1613371951]
-libraries/ = SubResource("AnimationLibrary_q8j3a")
-autoplay = &"float"
-
-[node name="Enemy12" parent="Enemies" unique_id=58314194 instance=ExtResource("6_p57ef")]
-position = Vector2(-26, -678)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy12" unique_id=698152483]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_p5edj")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy12" unique_id=1933860391]
-libraries/ = SubResource("AnimationLibrary_twgab")
-autoplay = &"float"
-
-[node name="Enemy13" parent="Enemies" unique_id=473163559 instance=ExtResource("6_p57ef")]
-position = Vector2(-266, -321)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy13" unique_id=2046003537]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_8or0l")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy13" unique_id=1879644290]
-libraries/ = SubResource("AnimationLibrary_7025r")
-autoplay = &"float"
-
-[node name="Enemy15" parent="Enemies" unique_id=1355791016 instance=ExtResource("6_p57ef")]
-position = Vector2(451, -196)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy15" unique_id=1565961494]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_j1tn6")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy15" unique_id=2123090991]
-libraries/ = SubResource("AnimationLibrary_oaba0")
-autoplay = &"float"
-
 [node name="EnemyPurple7" parent="Enemies" unique_id=1914324235 instance=ExtResource("7_u5sy4")]
 position = Vector2(359, -110)
 
@@ -2448,61 +1664,12 @@ shape = SubResource("RectangleShape2D_4ovul")
 libraries/ = SubResource("AnimationLibrary_7ixpq")
 autoplay = &"float"
 
-[node name="Enemy11" parent="Enemies" unique_id=1948557446 instance=ExtResource("6_p57ef")]
-position = Vector2(680, 496)
+[node name="EnemyUpdated25" parent="Enemies" unique_id=841141881 instance=ExtResource("10_ir15t")]
+position = Vector2(704, 330)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy11" unique_id=1602666120]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_qck8b")
-
-[node name="Enemy19" parent="Enemies" unique_id=841141881 instance=ExtResource("6_p57ef")]
-position = Vector2(770, 497)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy19" unique_id=976615361]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_qck8b")
-
-[node name="Enemy20" parent="Enemies" unique_id=2097928047 instance=ExtResource("6_p57ef")]
-position = Vector2(745, 400)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy20" unique_id=1425369068]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_qck8b")
-
-[node name="Enemy20" parent="Enemies/Enemy20" unique_id=1922971950 instance=ExtResource("6_p57ef")]
-position = Vector2(-41, -70)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy20/Enemy20" unique_id=1282116434]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_qck8b")
-
-[node name="Enemy21" parent="Enemies/Enemy20" unique_id=266252973 instance=ExtResource("6_p57ef")]
-position = Vector2(14, -109)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy20/Enemy21" unique_id=2041549277]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_qck8b")
-
-[node name="Enemy14" parent="Enemies" unique_id=1457586332 instance=ExtResource("6_p57ef")]
-position = Vector2(600, 496)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy14" unique_id=198233690]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_qck8b")
-
-[node name="Enemy16" parent="Enemies" unique_id=982347528 instance=ExtResource("6_p57ef")]
-position = Vector2(472, 496)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy16" unique_id=155722124]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_qck8b")
-
-[node name="Enemy17" parent="Enemies" unique_id=153440469 instance=ExtResource("6_p57ef")]
-position = Vector2(648, 496)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy17" unique_id=1995414926]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_qck8b")
+[node name="EnemyUpdated24" parent="Enemies" unique_id=1826870643 instance=ExtResource("10_ir15t")]
+position = Vector2(759, 291)
+floating = true
 
 [node name="EnemyPurple11" parent="Enemies" unique_id=688286424 instance=ExtResource("7_u5sy4")]
 position = Vector2(-423, 375)
@@ -2510,13 +1677,6 @@ position = Vector2(-423, 375)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyPurple11" unique_id=554974887]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_83wu6")
-
-[node name="Enemy18" parent="Enemies" unique_id=1224020753 instance=ExtResource("6_p57ef")]
-position = Vector2(-384, 313)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy18" unique_id=464687075]
-position = Vector2(0, -8)
-shape = SubResource("RectangleShape2D_ikjna")
 
 [node name="EnemyPurple12" parent="Enemies" unique_id=351260545 instance=ExtResource("7_u5sy4")]
 position = Vector2(-311, 370)
@@ -2561,6 +1721,73 @@ floating = true
 [node name="EnemyUpdated4" parent="Enemies" unique_id=220052927 instance=ExtResource("10_ir15t")]
 position = Vector2(175, 279)
 floating = true
+
+[node name="EnemyUpdated5" parent="Enemies" unique_id=1414583889 instance=ExtResource("10_ir15t")]
+position = Vector2(121, 112)
+
+[node name="EnemyUpdated6" parent="Enemies" unique_id=779551573 instance=ExtResource("10_ir15t")]
+position = Vector2(-272, 230)
+floating = true
+
+[node name="EnemyUpdated7" parent="Enemies" unique_id=1802666197 instance=ExtResource("10_ir15t")]
+position = Vector2(-359, -80)
+floating = true
+
+[node name="EnemyUpdated8" parent="Enemies" unique_id=1675550678 instance=ExtResource("10_ir15t")]
+position = Vector2(-306, 184)
+floating = true
+
+[node name="EnemyUpdated9" parent="Enemies" unique_id=1462286013 instance=ExtResource("10_ir15t")]
+position = Vector2(-232, 272)
+
+[node name="EnemyUpdated10" parent="Enemies" unique_id=2114759243 instance=ExtResource("10_ir15t")]
+position = Vector2(-73, 326)
+floating = true
+
+[node name="EnemyUpdated11" parent="Enemies" unique_id=455874208 instance=ExtResource("10_ir15t")]
+position = Vector2(-19, 299)
+floating = true
+
+[node name="EnemyUpdated12" parent="Enemies" unique_id=1886088468 instance=ExtResource("10_ir15t")]
+position = Vector2(167, -503)
+
+[node name="EnemyUpdated13" parent="Enemies" unique_id=685885692 instance=ExtResource("10_ir15t")]
+position = Vector2(-16, -580)
+
+[node name="EnemyUpdated14" parent="Enemies" unique_id=1417398182 instance=ExtResource("10_ir15t")]
+position = Vector2(-405, -824)
+
+[node name="EnemyUpdated15" parent="Enemies" unique_id=1162523437 instance=ExtResource("10_ir15t")]
+position = Vector2(-26, -678)
+floating = true
+
+[node name="EnemyUpdated16" parent="Enemies" unique_id=1464742610 instance=ExtResource("10_ir15t")]
+position = Vector2(-266, -321)
+floating = true
+
+[node name="EnemyUpdated17" parent="Enemies" unique_id=465061115 instance=ExtResource("10_ir15t")]
+position = Vector2(600, 496)
+
+[node name="EnemyUpdated18" parent="Enemies" unique_id=212610408 instance=ExtResource("10_ir15t")]
+position = Vector2(472, 496)
+
+[node name="EnemyUpdated19" parent="Enemies" unique_id=773575841 instance=ExtResource("10_ir15t")]
+position = Vector2(648, 496)
+
+[node name="EnemyUpdated20" parent="Enemies" unique_id=1462936038 instance=ExtResource("10_ir15t")]
+position = Vector2(680, 496)
+
+[node name="EnemyUpdated21" parent="Enemies" unique_id=2127293764 instance=ExtResource("10_ir15t")]
+position = Vector2(770, 496)
+
+[node name="EnemyUpdated22" parent="Enemies" unique_id=73515166 instance=ExtResource("10_ir15t")]
+position = Vector2(451, -196)
+
+[node name="EnemyUpdated23" parent="Enemies" unique_id=1172097131 instance=ExtResource("10_ir15t")]
+position = Vector2(-384, 313)
+
+[node name="EnemyUpdated26" parent="Enemies" unique_id=301218748 instance=ExtResource("10_ir15t")]
+position = Vector2(745, 400)
 
 [node name="Pickups" type="Node" parent="." unique_id=1184707014]
 

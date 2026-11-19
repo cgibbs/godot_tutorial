@@ -3,24 +3,6 @@
 [ext_resource type="Script" uid="uid://bmbtel7ohfs3e" path="res://addons/scene_painter/scene_painter_label_settings.gd" id="1_x35td"]
 [ext_resource type="Script" uid="uid://50r12rv0cn6o" path="res://addons/scene_painter/scene_painter_scene_data.gd" id="2_7ypp3"]
 
-[sub_resource type="Resource" id="Resource_x35td"]
-script = ExtResource("1_x35td")
-text = "bounce pickup"
-max_line_width = 600.0
-position = Vector2(609.15845, 531.77057)
-
-[sub_resource type="Resource" id="Resource_7ypp3"]
-script = ExtResource("1_x35td")
-text = "bounce pickup"
-max_line_width = 600.0
-position = Vector2(609.15845, 531.77057)
-
-[sub_resource type="Resource" id="Resource_k7c1s"]
-script = ExtResource("1_x35td")
-text = "bounce competency check"
-max_line_width = 600.0
-position = Vector2(697.78094, 447.66394)
-
 [resource]
 script = ExtResource("2_7ypp3")
 images = Dictionary[Vector2i, PackedByteArray]({
@@ -49,4 +31,3 @@ Vector2i(3, -1): PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAA
 Vector2i(3, 0): PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAAVtJREFUeJzt17ENgCAQQFEZgg3YfyI2YAisNBQYY2Ew3nsVxRXX/FzYNgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC40Erpq3cAFhA/AETRSukuPwQkfAhK/BDMEb34IRD/fAhkvPTChx+bxS56+LZ0F2mu9ZwZ37OZXGt6a1EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOCBHUl+NVQSWwokAAAAAElFTkSuQmCC"),
 Vector2i(4, -2): PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAASBJREFUeJztzkERAAAEADBh9C8mBCG489kSLAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAblVmfx8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgYwC7VwIzOgGW4gAAAABJRU5ErkJggg==")
 })
-labels = Array[ExtResource("1_x35td")]([SubResource("Resource_x35td"), SubResource("Resource_7ypp3"), SubResource("Resource_k7c1s")])
