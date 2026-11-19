@@ -19,13 +19,17 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		if has_bounced == false:
-			var knockback_direction = (body.global_position - global_position).normalized()
-			player.apply_knockback(knockback_direction,100, 0.12)
-	print(scene_file_path)
+			knock_player_back(body)
 	if scene_file_path.split('/')[-1] == "enemy_purple.tscn":
 		timer.start()
 		has_bounced = true
 		
+
+func knock_player_back(body) -> void:
+	if (body.global_position.distance_to(global_position) < 40):
+		print("applying knockback to player")
+		var knockback_direction = (body.global_position - global_position).normalized()
+		player.apply_knockback(knockback_direction,100, 0.12)
 
 func _on_timer_timeout() -> void:
 	has_bounced = false

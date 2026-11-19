@@ -33,6 +33,9 @@ func _process(delta: float) -> void:
 			if (player.global_position.distance_to(global_position) < 60):
 				var knockback_direction = (player.global_position - global_position).normalized()
 				player.apply_knockback(knockback_direction,200, 0.12, true)
+			# could be fun to make exploding enemies cause way more bounce?
+			#for enemy in get_tree().get_nodes_in_group("Enemies"):
+				#enemy.knock_player_back(player)
 		# do the block destruction
 	if phase == 3:
 		queue_free()

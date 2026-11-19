@@ -99,7 +99,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p2xw"]
 size = Vector2(10, 14)
 
-[node name="EnemyPurpleUpdated" type="Area2D" unique_id=841141881 node_paths=PackedStringArray("timer")]
+[node name="EnemyPurpleUpdated" type="Area2D" unique_id=841141881 node_paths=PackedStringArray("timer") groups=["Enemies"]]
 collision_mask = 2
 script = ExtResource("1_nr2rm")
 timer = NodePath("Timer")

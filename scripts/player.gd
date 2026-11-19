@@ -17,7 +17,7 @@ var movement_disabled = false
 
 var has_enemy_bounce_powerup = true
 var has_dash_powerup = false
-var has_bomb_powerup = false
+var has_bomb_powerup = true
 # this should probably just be for messing around in the post-game, it's way too strong
 var has_balloon_powerup = false
 
@@ -93,7 +93,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		
-		if Input.is_action_just_pressed("jump") and !is_on_floor() and !has_used_balloon:
+		if Input.is_action_just_pressed("jump") and !is_on_floor() and has_balloon_powerup and !has_used_balloon:
 			print("Laying down a balloon!")
 			has_used_balloon = true
 			const BALLOON = preload("../scenes/balloon.tscn")
@@ -131,10 +131,10 @@ func apply_knockback(direction: Vector2, force: float, knockback_duration: float
 	if (has_enemy_bounce_powerup and !ignore_powerup):
 		if velocity.y < JUMP_VELOCITY:
 			velocity.y = JUMP_VELOCITY
-		knockback = velocity * (Vector2.UP + Vector2.RIGHT).normalized() * 1.2
+		knockback = knockback + (velocity * (Vector2.UP + Vector2.RIGHT).normalized() * 1.2)
 		knockback_timer = knockback_duration
 	else:
-		knockback = direction * force
+		knockback = knockback+ (direction * force)
 		knockback_timer = knockback_duration
 
 
