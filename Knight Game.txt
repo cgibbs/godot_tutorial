@@ -29,3 +29,5 @@ Bouncy blocks that aren't enemies, and thus don't require the enemy bounce power
 Bombs aren't reset by checkpoint. I'm not sure why that matters yet, but I'm sure speedrunners will figure out something silly to do with that.
 
 There's a bomb glitch that happens when you jump up against a single-tile ceiling and lay a bomb, and it just gets your character above the ceiling. That's too fun to delete from the game, it'll just be a neat hidden feature.
+
+It would be fun to have an Easter Egg where you stand on a west-facing ledge near the top of the map and it replaces the level with the Mega Man 2 start screen. Scott would appreciate it, at least. Maybe re

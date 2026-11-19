@@ -16,7 +16,7 @@ var movement_disabled = false
 
 
 var has_enemy_bounce_powerup = true
-var has_dash_powerup = false
+var has_dash_powerup = true
 var has_bomb_powerup = true
 # this should probably just be for messing around in the post-game, it's way too strong
 var has_balloon_powerup = false
@@ -29,6 +29,10 @@ var checkpoint_held_press_time = 0
 var able_to_reset = true
 
 var has_used_balloon = false
+
+func _ready() -> void:
+	last_torch_x = global_position.x
+	last_torch_y = global_position.y
 
 func reset_checkpoint() -> void:
 	for torch in get_tree().get_nodes_in_group("Torches"):
@@ -104,10 +108,6 @@ func _physics_process(delta: float) -> void:
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction := Input.get_axis("move_left", "move_right")
 		
-		if Input.is_action_just_pressed("dash") and !is_on_floor() and has_dash_powerup and !has_dashed:
-			apply_knockback(Vector2(direction * SPEED, 0),3, .2, true)
-			has_dashed = true
-		
 		if is_on_floor():
 			if direction == 0:
 				animated_sprite.play("idle")
@@ -116,12 +116,17 @@ func _physics_process(delta: float) -> void:
 		else:
 			animated_sprite.play("jump")
 		
+		if Input.is_action_just_pressed("dash") and !is_on_floor() and has_dash_powerup and !has_dashed:
+			apply_knockback(Vector2((1 if !animated_sprite.flip_h else -1) * SPEED, 0),3, .2, true)
+			has_dashed = true
+		
 		if direction:
 			if direction > 0:
 				animated_sprite.flip_h = false
 			elif direction < 0:
 				animated_sprite.flip_h = true
 			velocity.x = direction * SPEED
+			
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
