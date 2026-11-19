@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://b5k5k7uryha2y"]
+
+[ext_resource type="Script" uid="uid://b0v6bt5skhxw6" path="res://scripts/bomb.gd" id="1_vpdcx"]
+[ext_resource type="Texture2D" uid="uid://83ya7yx1cf0b" path="res://assets/sprites/bomberman_nes.png" id="2_j15uc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p2xw"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84slv"]
+atlas = ExtResource("2_j15uc")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxi8k"]
+atlas = ExtResource("2_j15uc")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hf1o"]
+atlas = ExtResource("2_j15uc")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56fam"]
+atlas = ExtResource("2_j15uc")
+region = Rect2(32, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4p2xw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84slv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxi8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hf1o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56fam")
+}],
+"loop": 1,
+"name": &"explode",
+"speed": 10.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=959610357 groups=["Bombs"]]
+script = ExtResource("1_vpdcx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=778191262]
+shape = SubResource("RectangleShape2D_4p2xw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=873529540]
+sprite_frames = SubResource("SpriteFrames_4p2xw")
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="." unique_id=1453192127]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

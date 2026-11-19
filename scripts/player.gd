@@ -12,10 +12,13 @@ var has_dashed = false
 var movement_disabled = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var timer: Timer = $Timer
+@onready var timer: Timer = $CheckpointTimer
+
 
 var has_enemy_bounce_powerup = true
 var has_dash_powerup = false
+# this should probably just be for messing around in the post-game, it's way too strong
+var has_balloon_powerup = false
 
 var last_torch_x = 0
 var last_torch_y = 0
@@ -23,6 +26,8 @@ var last_torch_y = 0
 var checkpoint_held_press_time = 0
 
 var able_to_reset = true
+
+var has_used_balloon = false
 
 func reset_checkpoint() -> void:
 	for torch in get_tree().get_nodes_in_group("Torches"):
@@ -40,6 +45,21 @@ func reset_checkpoint() -> void:
 	return
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("bomb"):
+		print("checking for existing bombs")
+		if (get_tree().get_node_count_in_group("Bombs") == 0):
+			print("Laying down a bomb!")
+			const BOMB = preload("../scenes/bomb.tscn")
+			var bomb = BOMB.instantiate()
+			get_tree().get_root().add_child(bomb)
+			bomb.position = global_position
+			bomb.position.y -= 8
+			position.y -= 20
+		#bomb.position.y += 20
+
+		# create a bomb at the player's position
+
+	
 	if Input.is_action_pressed("reset_to_checkpoint") and able_to_reset:
 		checkpoint_held_press_time += delta
 		if checkpoint_held_press_time > 1:
@@ -67,12 +87,19 @@ func _physics_process(delta: float) -> void:
 			velocity += get_gravity() * delta
 
 		if is_on_floor():
+			has_used_balloon = false
 			has_dashed = false
 
 		# Handle jump.
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-			
+		
+		if Input.is_action_just_pressed("jump") and !is_on_floor() and !has_used_balloon:
+			print("Laying down a balloon!")
+			has_used_balloon = true
+			const BALLOON = preload("../scenes/balloon.tscn")
+			var balloon = BALLOON.instantiate()
+			self.add_child(balloon)
 
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.

@@ -25,3 +25,7 @@ Airdash can use the knockback function, I'm now realizing.
 Fans that push the knight while mid-air could make for more interesting platforming.
 
 Bouncy blocks that aren't enemies, and thus don't require the enemy bounce powerup? Could be fun, and would extend the puzzles a bit and introduce bouncing behavior before the powerup is acquired.
+
+Bombs aren't reset by checkpoint. I'm not sure why that matters yet, but I'm sure speedrunners will figure out something silly to do with that.
+
+There's a bomb glitch that happens when you jump up against a single-tile ceiling and lay a bomb, and it just gets your character above the ceiling. That's too fun to delete from the game, it'll just be a neat hidden feature.

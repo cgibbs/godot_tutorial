@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://oynodtj4xwai"]
+
+[ext_resource type="Script" uid="uid://yqile7yc00k1" path="res://scripts/balloon.gd" id="1_1eawp"]
+[ext_resource type="Texture2D" uid="uid://w3o1ixfkp22r" path="res://assets/sprites/balloon_fight.png" id="1_tpd1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpd1t"]
+size = Vector2(10, 16)
+
+[node name="Balloon" type="Node2D" unique_id=804864809]
+script = ExtResource("1_1eawp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1694113681]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1651170313]
+shape = SubResource("RectangleShape2D_tpd1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1639319127]
+texture = ExtResource("1_tpd1t")
+region_enabled = true
+region_rect = Rect2(178, 68, 10, 16)
+
+[node name="Timer" type="Timer" parent="." unique_id=1542385401]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
