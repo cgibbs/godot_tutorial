@@ -15,9 +15,9 @@ var movement_disabled = false
 @onready var timer: Timer = $CheckpointTimer
 
 
-var has_enemy_bounce_powerup = true
-var has_dash_powerup = true
-var has_bomb_powerup = true
+var has_enemy_bounce_powerup = false
+var has_dash_powerup = false
+var has_bomb_powerup = false
 # this should probably just be for messing around in the post-game, it's way too strong
 var has_balloon_powerup = false
 
