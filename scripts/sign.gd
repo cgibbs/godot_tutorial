@@ -25,7 +25,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		label_3.visible = true
 		pass
 
-func _on_area_2d_body_shape_exited(body_rid: RID, _body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_area_2d_body_shape_exited(_body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	# make sign label invisible
 	label.visible = false
 	label_2.visible = false

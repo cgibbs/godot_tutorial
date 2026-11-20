@@ -42,3 +42,7 @@ UI elements
 * speedrun timer (option to turn on in pause menu?)
 Game Elements
 * compass pickup
+
+Okay, new stuff to add and work with:
+* Portals! I dunno if the player should be able to create these yet, but they're fun as pre-placed objects. These can take the player to new areas, but also be a puzzling/platforming element in their own right. Collect enough coins to open a portal, so that the player can be rewarded with a new area. Portals might also temporarily disable pickups, so that individual areas can be constrained appropriately. Just need to make sure I have a VERY reliable solution for removing and adding those pickups, with no weird defaults that might cause a player to lose what they've already acquired (or worse, gain stuff they never had in the first place).
+* alternate world tileset - I palette-swapped some stuff for bonus areas, which I might call "warped worlds"? I literally can't escape Alice's shadow, because I thought that up six hours ago and only just now remembered that's the subtitle of Rhell, lmao.

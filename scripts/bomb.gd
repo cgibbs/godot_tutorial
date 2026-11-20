@@ -18,7 +18,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if phase == 1:
 		animated_sprite.speed_scale = 2
 		# setting the timer for the explosion phase
