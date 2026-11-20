@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://but0yo0cbiml8" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://baeii16r70yxi" path="res://scenes/killzone.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://inhp7lxofni6" path="res://scenes/coin.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cihkwnel7kdd2" path="res://scenes/portal.tscn" id="6_264po"]
 [ext_resource type="PackedScene" uid="uid://b2jg6soj2dwyd" path="res://scenes/pickup_dash.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://dhppqw5hij1pr" path="res://scenes/fan.tscn" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://8lrx05tcy3yf" path="res://scenes/enemy_purple_updated.tscn" id="10_ca42v"]
@@ -971,6 +972,11 @@ position = Vector2(-684, 304)
 rotation = -1.5707964
 platform_type = 1
 
+[node name="Platform45" parent="Platforms" unique_id=575397369 instance=ExtResource("2_lnu2h")]
+position = Vector2(-731, 512)
+rotation = -1.5707964
+platform_type = 1
+
 [node name="Enemies" type="Node2D" parent="." unique_id=632661333]
 
 [node name="fan" parent="Enemies" unique_id=1793834274 node_paths=PackedStringArray("area_2d", "player") instance=ExtResource("9_0tnpc")]
@@ -1508,10 +1514,13 @@ labelText = "How did you get here?"
 labelText2 = "Well, don't go further west,"
 labelText3 = "you'll just die."
 
-[node name="Platform" parent="." unique_id=575397369 instance=ExtResource("2_lnu2h")]
-position = Vector2(-731, 512)
-rotation = -1.5707964
-platform_type = 1
+[node name="Portal" parent="." unique_id=580348215 node_paths=PackedStringArray("exitPortal") instance=ExtResource("6_264po")]
+position = Vector2(-41, 118)
+exitPortal = NodePath("../Portal2")
+
+[node name="Portal2" parent="." unique_id=753036572 node_paths=PackedStringArray("exitPortal") instance=ExtResource("6_264po")]
+position = Vector2(-103, 102)
+exitPortal = NodePath("../Portal")
 
 [connection signal="body_entered" from="Enemies/fan/Area2D" to="Enemies/fan" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Enemies/fan/Area2D" to="Enemies/fan" method="_on_area_2d_body_exited"]

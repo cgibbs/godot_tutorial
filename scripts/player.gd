@@ -13,6 +13,7 @@ var movement_disabled = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $CheckpointTimer
+@onready var camera: Camera2D = $Camera2D
 
 
 var has_enemy_bounce_powerup = false
