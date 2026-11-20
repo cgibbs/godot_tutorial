@@ -22,6 +22,12 @@ one_way_collision = true
 
 [node name="YellowSprite" type="Sprite2D" parent="." unique_id=764926679]
 visible = false
+texture = ExtResource("1_ba0x2")
+region_enabled = true
+region_rect = Rect2(16, 32, 32, 9)
 
 [node name="IceSprite" type="Sprite2D" parent="." unique_id=1744834912]
 visible = false
+texture = ExtResource("1_ba0x2")
+region_enabled = true
+region_rect = Rect2(16, 48, 32, 9)
