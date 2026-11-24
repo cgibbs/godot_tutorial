@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 130.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -310.0
 
 var knockback: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0

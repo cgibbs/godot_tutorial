@@ -3,9 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cdgkvkjbjqn1c" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://d08unhq0cw67y" path="res://scenes/platform.tscn" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://but0yo0cbiml8" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://dswucomo6nphg" path="res://assets/sprites/coin.png" id="4_1kice"]
+[ext_resource type="FontFile" uid="uid://du2rdsvsgrx3s" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_5newe"]
 [ext_resource type="PackedScene" uid="uid://baeii16r70yxi" path="res://scenes/killzone.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://inhp7lxofni6" path="res://scenes/coin.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://cihkwnel7kdd2" path="res://scenes/portal.tscn" id="6_264po"]
 [ext_resource type="PackedScene" uid="uid://b2jg6soj2dwyd" path="res://scenes/pickup_dash.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://dhppqw5hij1pr" path="res://scenes/fan.tscn" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://8lrx05tcy3yf" path="res://scenes/enemy_purple_updated.tscn" id="10_ca42v"]
@@ -19,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dta4m0pxw1vli" path="res://scenes/bombable_wall_yellow.tscn" id="16_ca42v"]
 [ext_resource type="PackedScene" uid="uid://csgy76qkyjdac" path="res://scenes/bombable_wall_ice.tscn" id="17_rysoc"]
 [ext_resource type="PackedScene" uid="uid://dq782ro65emox" path="res://scenes/pickup_bomb.tscn" id="18_ssvqc"]
+[ext_resource type="Script" uid="uid://bdhmmp4v3hxtf" path="res://scripts/game_manager.gd" id="19_264po"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -554,6 +556,10 @@ _data = {
 size = Vector2(80, 16)
 
 [node name="Game" type="Node2D" unique_id=1441690614]
+
+[node name="GameManager" type="Node" parent="." unique_id=953753633]
+unique_name_in_owner = true
+script = ExtResource("19_264po")
 
 [node name="Level" type="TileMap" parent="." unique_id=360790961]
 tile_set = SubResource("TileSet_4p2xw")
@@ -1514,13 +1520,34 @@ labelText = "How did you get here?"
 labelText2 = "Well, don't go further west,"
 labelText3 = "you'll just die."
 
-[node name="Portal" parent="." unique_id=580348215 node_paths=PackedStringArray("exitPortal") instance=ExtResource("6_264po")]
-position = Vector2(-41, 118)
-exitPortal = NodePath("../Portal2")
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1643166551]
 
-[node name="Portal2" parent="." unique_id=753036572 node_paths=PackedStringArray("exitPortal") instance=ExtResource("6_264po")]
-position = Vector2(-103, 102)
-exitPortal = NodePath("../Portal")
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1485843287]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 148.0
+offset_top = 31.0
+offset_right = 188.0
+offset_bottom = 71.0
+
+[node name="CoinCountLabel" type="Label" parent="CanvasLayer/Control" unique_id=46159506]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = -99.0
+offset_top = 5.0
+offset_right = -37.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("4_5newe")
+theme_override_font_sizes/font_size = 16
+text = "Test"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/CoinCountLabel" unique_id=1112159078]
+position = Vector2(-14, 7)
+scale = Vector2(2, 2)
+texture = ExtResource("4_1kice")
+region_enabled = true
+region_rect = Rect2(3, 3, 10, 10)
 
 [connection signal="body_entered" from="Enemies/fan/Area2D" to="Enemies/fan" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Enemies/fan/Area2D" to="Enemies/fan" method="_on_area_2d_body_exited"]
