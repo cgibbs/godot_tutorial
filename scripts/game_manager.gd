@@ -20,3 +20,6 @@ func update_coin_count() -> void:
 
 	print("collected " + str(collected_coins) + " out of " + str(total_coins) + " coins.")
 	coin_count_label.text = str(collected_coins) + "/" + str(total_coins)
+
+	for portal in get_tree().get_nodes_in_group("Portals"):
+		portal.check_coin_count_reached(collected_coins)

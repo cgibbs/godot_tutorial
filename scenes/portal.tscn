@@ -254,7 +254,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p2xw"]
 size = Vector2(13, 42)
 
-[node name="Portal" type="Area2D" unique_id=580348215]
+[node name="Portal" type="Area2D" unique_id=580348215 groups=["Portals"]]
 collision_mask = 2
 script = ExtResource("1_1ffj6")
 

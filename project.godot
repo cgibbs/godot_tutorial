@@ -29,6 +29,7 @@ enabled=PackedStringArray("res://addons/scene_painter/plugin.cfg")
 
 Enemies=""
 Coins=""
+Portals=""
 
 [input]
 

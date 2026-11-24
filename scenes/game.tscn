@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://du2rdsvsgrx3s" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_5newe"]
 [ext_resource type="PackedScene" uid="uid://baeii16r70yxi" path="res://scenes/killzone.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://inhp7lxofni6" path="res://scenes/coin.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cihkwnel7kdd2" path="res://scenes/portal.tscn" id="6_264po"]
 [ext_resource type="PackedScene" uid="uid://b2jg6soj2dwyd" path="res://scenes/pickup_dash.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://dhppqw5hij1pr" path="res://scenes/fan.tscn" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://8lrx05tcy3yf" path="res://scenes/enemy_purple_updated.tscn" id="10_ca42v"]
@@ -557,10 +558,6 @@ size = Vector2(80, 16)
 
 [node name="Game" type="Node2D" unique_id=1441690614]
 
-[node name="GameManager" type="Node" parent="." unique_id=953753633]
-unique_name_in_owner = true
-script = ExtResource("19_264po")
-
 [node name="Level" type="TileMap" parent="." unique_id=360790961]
 tile_set = SubResource("TileSet_4p2xw")
 format = 2
@@ -749,6 +746,18 @@ position = Vector2(103, 505)
 
 [node name="Coin52" parent="Coins" unique_id=588196072 instance=ExtResource("4_lbhrr")]
 position = Vector2(-121, 504)
+
+[node name="Portals" type="Node" parent="." unique_id=422773481]
+
+[node name="Portal" parent="Portals" unique_id=580348215 node_paths=PackedStringArray("exitPortal") instance=ExtResource("6_264po")]
+position = Vector2(-36, 116)
+exitPortal = NodePath("../Portal2")
+coinsRequired = 1
+
+[node name="Portal2" parent="Portals" unique_id=1730625645 node_paths=PackedStringArray("exitPortal") instance=ExtResource("6_264po")]
+position = Vector2(-183, 21)
+exitPortal = NodePath("../Portal")
+coinsRequired = 1
 
 [node name="Platforms" type="Node" parent="." unique_id=1196571481]
 
@@ -1548,6 +1557,10 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_1kice")
 region_enabled = true
 region_rect = Rect2(3, 3, 10, 10)
+
+[node name="GameManager" type="Node" parent="." unique_id=953753633]
+unique_name_in_owner = true
+script = ExtResource("19_264po")
 
 [connection signal="body_entered" from="Enemies/fan/Area2D" to="Enemies/fan" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Enemies/fan/Area2D" to="Enemies/fan" method="_on_area_2d_body_exited"]
