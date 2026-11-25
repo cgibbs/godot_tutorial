@@ -16,6 +16,8 @@ var closed = false
 var inactive = false
 
 func _ready() -> void:
+	coins_required_label.visible = false
+	coin_sprite.visible = false
 	# will probably need to ask the game manager, instead
 	check_coin_count_reached(game_manager.collected_coins)
 	if inactive:
@@ -29,8 +31,8 @@ func _on_body_entered(body: Node2D) -> void:
 		body.camera.global_position = exitPortal.global_position
 		animation_timer.start(0.5)
 	if body is CharacterBody2D and inactive:
-		coins_required_label.visible = false
-		coin_sprite.visible = false
+		coins_required_label.visible = true
+		coin_sprite.visible = true
 
 
 
@@ -40,8 +42,8 @@ func _on_body_exited(body: Node2D) -> void:
 		closed = true
 		animated_sprite.play("close")
 	if body is CharacterBody2D and inactive:
-		coins_required_label.visible = true
-		coin_sprite.visible = true
+		coins_required_label.visible = false
+		coin_sprite.visible = false
 
 
 func _on_use_cooldown_timer_timeout() -> void:
