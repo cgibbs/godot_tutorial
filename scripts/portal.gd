@@ -8,6 +8,8 @@ extends Area2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_timer: Timer = $AnimationTimer
 @onready var game_manager: Node = %GameManager
+@onready var coins_required_label: Label = $CoinsRequiredLabel
+@onready var coin_sprite: Sprite2D = $CoinsRequiredLabel/CoinSprite
 
 var has_been_recently_used = false
 var closed = false
@@ -26,14 +28,20 @@ func _on_body_entered(body: Node2D) -> void:
 		body.global_position = exitPortal.global_position
 		body.camera.global_position = exitPortal.global_position
 		animation_timer.start(0.5)
+	if body is CharacterBody2D and inactive:
+		coins_required_label.visible = false
+		coin_sprite.visible = false
 
 
 
-func _on_body_exited(_body: Node2D) -> void:
+func _on_body_exited(body: Node2D) -> void:
 	has_been_recently_used = false
 	if closeOnExit:
 		closed = true
 		animated_sprite.play("close")
+	if body is CharacterBody2D and inactive:
+		coins_required_label.visible = true
+		coin_sprite.visible = true
 
 
 func _on_use_cooldown_timer_timeout() -> void:
@@ -54,6 +62,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 # just a quick access function for use via game manager
 func check_coin_count_reached(coinCount) -> void:
+	coins_required_label.text = str(coinCount) + "/" + str(coinsRequired)
 	if (coinCount >= coinsRequired):
 		inactive = false
 		animated_sprite.play("idle")
