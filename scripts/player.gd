@@ -11,6 +11,8 @@ var has_dashed = false
 
 var movement_disabled = false
 
+var controls_disabled = true
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $CheckpointTimer
 @onready var camera: Camera2D = $Camera2D
@@ -51,7 +53,7 @@ func reset_checkpoint() -> void:
 	return
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("bomb") and has_bomb_powerup:
+	if Input.is_action_just_pressed("bomb") and has_bomb_powerup and !controls_disabled:
 		if (get_tree().get_node_count_in_group("Bombs") == 0):
 			const BOMB = preload("../scenes/bomb.tscn")
 			var bomb = BOMB.instantiate()
@@ -64,12 +66,12 @@ func _physics_process(delta: float) -> void:
 		# create a bomb at the player's position
 
 	
-	if Input.is_action_pressed("reset_to_checkpoint") and able_to_reset:
+	if Input.is_action_pressed("reset_to_checkpoint") and able_to_reset and !controls_disabled:
 		checkpoint_held_press_time += delta
 		if checkpoint_held_press_time > 1:
 			reset_checkpoint();
 		
-	if Input.is_action_just_released("reset_to_checkpoint") and able_to_reset:
+	if Input.is_action_just_released("reset_to_checkpoint") and able_to_reset and !controls_disabled:
 		if checkpoint_held_press_time < 1:
 			position.x = last_torch_x
 			position.y = last_torch_y
@@ -95,10 +97,10 @@ func _physics_process(delta: float) -> void:
 			has_dashed = false
 
 		# Handle jump.
-		if Input.is_action_just_pressed("jump") and is_on_floor():
+		if Input.is_action_just_pressed("jump") and is_on_floor() and !controls_disabled:
 			velocity.y = JUMP_VELOCITY
 		
-		if Input.is_action_just_pressed("jump") and !is_on_floor() and has_balloon_powerup and !has_used_balloon:
+		if Input.is_action_just_pressed("jump") and !is_on_floor() and has_balloon_powerup and !has_used_balloon and !controls_disabled:
 			print("Laying down a balloon!")
 			has_used_balloon = true
 			const BALLOON = preload("../scenes/balloon.tscn")
@@ -109,27 +111,29 @@ func _physics_process(delta: float) -> void:
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction := Input.get_axis("move_left", "move_right")
 		
-		if is_on_floor():
-			if direction == 0:
-				animated_sprite.play("idle")
+		if !controls_disabled:
+			if is_on_floor():
+				if direction == 0:
+					animated_sprite.play("idle")
+				else:
+					animated_sprite.play("run")
 			else:
-				animated_sprite.play("run")
-		else:
-			animated_sprite.play("jump")
+				animated_sprite.play("jump")
 		
-		if Input.is_action_just_pressed("dash") and !is_on_floor() and has_dash_powerup and !has_dashed:
+		if Input.is_action_just_pressed("dash") and !is_on_floor() and has_dash_powerup and !has_dashed and !controls_disabled:
 			apply_knockback(Vector2((1 if !animated_sprite.flip_h else -1) * SPEED, 0),3, .2, true)
 			has_dashed = true
 		
-		if direction:
-			if direction > 0:
-				animated_sprite.flip_h = false
-			elif direction < 0:
-				animated_sprite.flip_h = true
-			velocity.x = direction * SPEED
-			
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+		if !controls_disabled:
+			if direction:
+				if direction > 0:
+					animated_sprite.flip_h = false
+				elif direction < 0:
+					animated_sprite.flip_h = true
+				velocity.x = direction * SPEED
+				
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
 
@@ -147,3 +151,6 @@ func apply_knockback(direction: Vector2, force: float, knockback_duration: float
 func _on_timer_timeout() -> void:
 	able_to_reset = true
 	pass # Replace with function body.
+
+func toggle_controls_for_ui() -> void:
+	controls_disabled = !controls_disabled
